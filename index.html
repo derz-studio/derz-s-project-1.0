@@ -1,11 +1,19 @@
-
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Velocity Garage</title>
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>GestureCam</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="style.css">
 
@@ -13,89 +21,107 @@
 
 <body>
 
-<section class="hero">
+<div class="container">
 
-<div class="overlay">
+    <video
+        id="video"
+        autoplay
+        playsinline>
+    </video>
 
-<h1>VELOCITY GARAGE</h1>
+    <canvas id="canvas"></canvas>
 
-<p>Dream Cars. Real Performance.</p>
+    <div class="hud">
 
-<p class="creator">Designed & Developed by Derrel</p>
+    <div class="live">
 
-<a href="#cars">
-<button>Explore Collection</button>
-</a>
+        <span class="live-dot"></span>
+
+        LIVE
+
+    </div>
+
+    <h1>GestureCam</h1>
+
+    <p class="subtitle">
+
+        AI Vision Interface
+
+    </p>
+
+    <div class="info">
+
+        <div class="row">
+
+            <span>Gesture</span>
+
+            <span id="gesture">
+
+                Waiting...
+
+            </span>
+
+        </div>
+
+        <div class="row">
+
+            <span>Blur</span>
+
+            <span id="blurStatus">
+
+                OFF
+
+            </span>
+
+        </div>
+
+        <div class="row">
+
+            <span>Status</span>
+
+            <span id="tracking">
+
+                Ready
+
+            </span>
+
+        </div>
+        <div class="row">
+
+    <span>Time</span>
+
+    <span id="clock">
+
+        00:00:00
+
+    </span>
+    <div class="row">
+
+    <span>FPS</span>
+
+    <span id="fps">
+
+        0
+
+    </span>
 
 </div>
 
-</section>
-
-<section class="featured" id="cars">
-
-<h2>Featured Collection</h2>
-
-<div class="cars">
-
-<div class="card">
-
-<img src="images/gt3rs.jpg">
-
-<h3>Porsche 911 GT3 RS</h3>
-
-<p>💰 Rp 6.5 Billion</p>
-
-<p>🐎 525 HP</p>
-
-<p>⚡ 0-100 km/h : 3.2 sec</p>
-
-<button>Learn More</button>
-
 </div>
 
-<div class="card">
-
-<img src="images/emira.jpg">
-
-<h3>Lotus Emira</h3>
-
-<p>💰 Rp 2.8 Billion</p>
-
-<p>🐎 400 HP</p>
-
-<p>⚡ 0-100 km/h : 4.2 sec</p>
-
-<button>Learn More</button>
-
-</div>
-
-<div class="card">
-
-<img src="images/mclaren720s.jpg">
-
-<h3>McLaren 720S</h3>
-
-<p>💰 Rp 7.5 Billion</p>
-
-<p>🐎 710 HP</p>
-
-<p>⚡ 0-100 km/h : 2.9 sec</p>
-
-<button>Learn More</button>
+    </div>
 
 </div>
 
 </div>
 
-</section>
+<script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js"></script>
 
-<footer>
-
-<h3>Velocity Garage</h3>
-
-<p>Designed & Developed by Derrel</p>
-
-</footer>
+<script src="effects.js"></script>
+<script src="gestures.js"></script>
+<script src="script.js"></script>
 
 </body>
 </html>
